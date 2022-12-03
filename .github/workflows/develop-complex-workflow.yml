@@ -1,0 +1,26 @@
+name: Develop Complex Workflow
+
+on: push
+
+jobs:
+  job1:
+    name: Job 1
+    runs-on: ubuntu-latest
+    steps:
+    - run: date
+  job2:
+    name: Job 2
+    runs-on: windows-latest
+    steps:
+    - run: date
+  job3:
+    name: Job 3
+    runs-on: macos-latest
+    steps:
+    - run: date
+  job4:
+    name: Job 4
+    runs-on: ubuntu-latest
+    steps:
+    - run: date
+    needs: [job1, job2, job3]
